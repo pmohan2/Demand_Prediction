@@ -2,7 +2,6 @@
 import pandas as pd
 import numpy as np
 import datetime
-import matplotlib.pyplot as plt
 import geocoder
 from geopy.geocoders import Nominatim
 from darksky.api import DarkSky, DarkSkyAsync
