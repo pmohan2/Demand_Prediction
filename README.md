@@ -32,27 +32,27 @@ from ipywidgets.embed import embed_minimal_html
 - *Most number of trips recorded had passengers travelling less than 30 miles, which makes sense as yellow taxis are commonly used for short trips within NYC.*
 - *Similarly average trip duration lies within fifty minutes.*
 
-Scatter Matrix Plot (Raw Data):
+#### Scatter Matrix Plot (Raw Data):
 
 ![Image of Plot](Images/scatter1.png)
 
-Scatter Matrix Plot (Final Data):
+#### Scatter Matrix Plot (Final Data):
 
 ![Image of Plot](Images/scatter2.png)
 
-Monthly Fluctuation of Demand:
+#### Monthly Fluctuation of Demand:
 
 *The line graph shows the monthly fluctuation of demands for the top 5 locations (location with most number of rides in the year 2019) and can be inferred that the demand for yellow taxi was at the peak during the month of March at Madison square. Minimum demand was observed during the month of January and December. This might be due to the impact of winter vacation. Also, the similar downward trend was observed during the summer vacation.*
 
 ![Image of Plot](Images/Top5.jpeg)
 
-Heat Map (Weekly vs Hourly):
+#### Heat Map (Weekly vs Hourly):
 
 *The following Heat Map compares weekly vs hourly taxi demand and it is evident that the demand was maximum during weekdays. Also, it can be inferred that demand was at its peak from evening to late in night. It is understood that people prefer to take yellow taxi during night time rather than the public transport.*
 
 ![Image of Plot](Images/Heatmap.jpeg)
 
-Temperature vs Demand:
+#### Temperature vs Demand:
 
 *From the Temperature vs Demand plot we can see that there is an increase in trend for demand of taxis when the temperature is very low as well as the temperature is very high. This might be because people may decide their mode of transportation depending upon the atmospheric condition.*
 
