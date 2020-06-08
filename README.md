@@ -34,7 +34,7 @@ from ipywidgets.embed import embed_minimal_html
 - *Similarly average trip duration lies within fifty minutes.*
 
 Scatter Matrix Plot (Raw Data):
-![Image of Plot](images/Bar_Pie.png)
+![Image of Plot](Images/Demand.jpeg)
 
 #### Heatmap (Monthly vs Weekly)
 
