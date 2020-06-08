@@ -41,44 +41,21 @@ Scatter Matrix Plot (Final Data):
 ![Image of Plot](Images/scatter2.png)
 
 Monthly Fluctuation of Demand:
+
 *The line graph shows the monthly fluctuation of demands for the top 5 locations (location with most number of rides in the year 2019) and can be inferred that the demand for yellow taxi was at the peak during the month of March at Madison square. Minimum demand was observed during the month of January and December. This might be due to the impact of winter vacation. Also, the similar downward trend was observed during the summer vacation.*
 
 ![Image of Plot](Images/Top5.jpeg)
 
 Heat Map (Weekly vs Hourly):
+
 *The following Heat Map compares weekly vs hourly taxi demand and it is evident that the demand was maximum during weekdays. Also, it can be inferred that demand was at its peak from evening to late in night. It is understood that people prefer to take yellow taxi during night time rather than the public transport.*
 
 ![Image of Plot](Images/Heatmap.jpeg)
 
 Temperature vs Demand:
+
 *From the Temperature vs Demand plot we can see that there is an increase in trend for demand of taxis when the temperature is very low as well as the temperature is very high. This might be because people may decide their mode of transportation depending upon the atmospheric condition.*
 
 ![Image of Plot](Images/TempvsDemand.jpeg)
 
 ---
-
-## How to Run the Code
-### Using Terminal
-*1. Open a terminal window.*
-
-*2. Change directories to where `API_NYC_crashdata.py` is saved.*
-
-*3. Type the following command:*
-	```
-	python API_NYC_crashdata.py
-	```
-    
-### Using Spyder/ Jupyter
-*1. Click on File->Open*
-
-*2. Choose directory where `API_NYC_crashdata.py` is stored*
-
-*3. Click on run or press F5 on Spyder, Shift+Enter in Jupyter*
-
----
-
-## Suggestions
-Weather data can be added to understand how the weather influences different contributing factors of the accidents. It can also be used to understand the severity of accidents with respect to different weather conditions.
-
-GMAPS Visualization Modification:
-Maps of different type can be set using a parameter```map_type=Hybrid/Satellite``` in ```gmaps.figure``` . Markers can be set to the map using the following code ```gmaps.marker_layer```
