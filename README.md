@@ -13,79 +13,27 @@
 - The weather data from [DarkSky API](https://darksky.net/dev)
 ---
 
-## Explanation of the Code
-
-The code, `API_NYC_crashdata.py`, begins by importing necessary Python packages:
+## Packages used for EDA
 ```
-import matplotlib.pyplot as plt
 import pandas as pd
-from sodapy import Socrata
+import numpy as np
+import matplotlib.pyplot as plt
 import seaborn as sns
-import gmaps
 from ipywidgets.embed import embed_minimal_html
 ```
 - *Note:The following packages need to be installed:* 
 - *pip install seaborn*
-- *pip install sodapy*
-- *pip install gmaps (If using Jupyter notebook $ jupyter nbextension enable --py --sys-prefix gmaps)*
 - *pip install ipywidgets.embed*
-
-We then import data from NYC Open Data using User Credentials and API Token by calling API:
-```
-username = input("Enter the Username") # Prompts the user credentials for the API
-password = input("Enter the password") 
-MyAppToken = input('Enter the app token')
-client = Socrata('data.cityofnewyork.us', MyAppToken, username=username,password=password)
-results = client.get("h9gi-nx95", limit=100000) # get() pulls the dynamic data from the API.
-results_df = pd.DataFrame.from_records(results) 
-```
-- *NOTE 1: The data pulled using API is in json format and it is converted to a data frame named "results_df".*  
-- *NOTE 2: The data may change over time and the results may not be same everytime.*
-```
-results_df['year'] = pd.DatetimeIndex(results_df['crash_date']).year # year, month, weekday and hour features are extracted from crash_date
-results_df['month'] = pd.DatetimeIndex(results_df['crash_date']).month
-results_df['weekday'] = pd.DatetimeIndex(results_df['crash_date']).weekday
-results_df['hour'] = pd.DatetimeIndex(results_df['crash_time']).hour
-df1=results_df[(results_df.year >= 2019)] # The crash data on and after 2019 year is used for visualization
-```
-
 
 ### Data Visualization:
 #### Visualization of prominent Contributing Factors using Stacked Bar and Pie Chart
-```
-#---------------------Bar plot------------------------------------------------
+*Exploratory Data Analysis is a process of conducting initial investigations on data set to identify patterns, anomalies, to test hypothesis and to check assumptions with the help of summary statistics and graphical representations. Before removing the outliers from the dataset the distribution of predictors are highly skewed which is evident from Fig. 3.4.1. After removing outliers, the distribution of parameters turns out to be normalized (Fig. 3.4.2). Making the predictor more normalized gives us the better model.*
+*The insights that can be derived from the Scatter Matrix Plot are:*
+- *Most of the trips recorded had the passenger count to be in two’s and three’s, this shows that most of the passengers who opted for the yellow taxi tends to travel in two’s and three’s the most.*
+- *Most number of trips recorded had passengers travelling less than 30 miles, which makes sense as yellow taxis are commonly used for short trips within NYC.*
+- *Similarly average trip duration lies within fifty minutes.*
 
-newframe = pd.DataFrame(df1.groupby(['contributing_factor_vehicle_1'])['number_of_persons_killed'].count()) # Counts the number of Accidents
-newframe1 = pd.DataFrame(df1.groupby(['contributing_factor_vehicle_1'])['number_of_persons_injured'].sum()) #Counts the number of persons injured
-newframe2 = pd.merge(newframea, newframe1, on='Cause') # Merges the top contributing factors' accident counts and their respective number of injuries
-newframe2 = newframe2.head(5) # Picks the top contributing factors
-newframe2 = newframe2.rename(columns = {"number_of_persons_injured":"No. of Persons Injured", "number_of_persons_killed":"No. of Accidents"})
-fig,(ax1,ax2) =plt.subplots(2,1,figsize = (12,12))   # Fixes the size and subplot place
-ax = newframe2.plot.bar(rot=0,ax=ax1, width = 0.7)   # Plots the stacked bar plot 
-ax.legend(fontsize = 14)
-ax.xaxis.label.set_size(14)
-ax.set_title('Top Five Accident Contributing Factors', fontsize = 15)
-plt.xticks(fontsize = 9, wrap = True)
-
-#---------------------Pie plot-------------------------------------------------
-newframe3 = pd.DataFrame(df1.groupby(['contributing_factor_vehicle_1'])['number_of_persons_killed'].sum()) # Sums the number of persons killed
-Others = sum(newframe3['number_of_persons_killed']==1) # Adds the killed values that is equal to 1 to "Other" contributing factor
-newframe3=newframe3[newframe3['number_of_persons_killed']>1] # Picks the contributing factor where the killed is greater than 1
-newframe3 = newframe3.append({'number_of_persons_killed':Others,'Cause':'Others'},ignore_index=True) # Adds the "Other" to the rows
-newframe3 = newframe3.head(7) # Picks only top seven contributing factor
-newframe3['number_of_persons_killed'] = round((newframe3['number_of_persons_killed']/a)*100,0) # Calculates the percetage of death by each contributing factor in total kills
-
-ax2.pie(newframe3['number_of_persons_killed'],labels=newframe3['Cause'],autopct='%1.1f%%') # Plots the Pie chart
-ax2.set_title('% of Mortality by each Factor', fontsize = 15)
-plt.savefig('Bar_Pie.png')
-```
-Finally, we visualize the data.  We save our plot as a `.png` image:
-```
-plt.savefig('Bar_Pie.png')	
-plt.show()
-```
-
-The output from this code is shown below:
+Scatter Matrix Plot (Raw Data):
 ![Image of Plot](images/Bar_Pie.png)
 
 #### Heatmap (Monthly vs Weekly)
