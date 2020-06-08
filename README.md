@@ -56,5 +56,5 @@ from ipywidgets.embed import embed_minimal_html
 
 ### Model Results:
 
-![Image of Plot](Images/Results)
+![Image of Plot](Images/Results.png)
 ---
