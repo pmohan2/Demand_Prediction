@@ -26,7 +26,6 @@ from ipywidgets.embed import embed_minimal_html
 - *pip install ipywidgets.embed*
 
 ### Data Visualization:
-#### Visualization of prominent Contributing Factors using Stacked Bar and Pie Chart
 *Exploratory Data Analysis is a process of conducting initial investigations on data set to identify patterns, anomalies, to test hypothesis and to check assumptions with the help of summary statistics and graphical representations. Before removing the outliers from the dataset the distribution of predictors are highly skewed which is evident from Fig. 3.4.1. After removing outliers, the distribution of parameters turns out to be normalized (Fig. 3.4.2). Making the predictor more normalized gives us the better model.*
 *The insights that can be derived from the Scatter Matrix Plot are:*
 - *Most of the trips recorded had the passenger count to be in two’s and three’s, this shows that most of the passengers who opted for the yellow taxi tends to travel in two’s and three’s the most.*
@@ -40,20 +39,11 @@ Scatter Matrix Plot (Raw Data):
 
 Scatter Matrix Plot (Final Data):
 
-![Image of Plot](Images/scatter12.png)
+![Image of Plot](Images/scatter2.png)
 
-#### Heatmap (Monthly vs Weekly)
+Monthly Fluctuation of Demand:
 
-```
-heatmap_df1["Month"] = pd.Categorical(heatmap_df1["Month"], heatmap_df1.Month.unique()) 
-plt.figure(figsize = (15, 9)) # Assigning figure size (length & breadth) for the plot
-file_long = heatmap_df1.pivot("Weekday", "Month", "Crash_Count") # Assigning the column names for which the heatmap needs to be plotted
-sns.heatmap(file_long, cmap = 'viridis', annot=True, fmt=".0f") # Plotting the map
-plt.title("Heatmap of Crash Count in New York City (Monthly vs Weekly)", fontsize = 14); # Assigning title for the plot
-plt.savefig('Heatmap1.jpg') # Saving the plot
-```
-The output from this code is shown below:
-![Image of Plot](images/Heatmap1.jpg)
+![Image of Plot](Images/Top5.jpeg)
 
 #### Heatmap (Weekly vs Hourly)
 ```
