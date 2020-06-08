@@ -26,7 +26,7 @@ from ipywidgets.embed import embed_minimal_html
 - *pip install ipywidgets.embed*
 
 ### Data Visualization:
-*Exploratory Data Analysis is a process of conducting initial investigations on data set to identify patterns, anomalies, to test hypothesis and to check assumptions with the help of summary statistics and graphical representations. Before removing the outliers from the dataset the distribution of predictors are highly skewed which is evident from Fig. 3.4.1. After removing outliers, the distribution of parameters turns out to be normalized (Fig. 3.4.2). Making the predictor more normalized gives us the better model.*
+*Exploratory Data Analysis is a process of conducting initial investigations on data set to identify patterns, anomalies, to test hypothesis and to check assumptions with the help of summary statistics and graphical representations. Before removing the outliers from the dataset the distribution of predictors are highly skewed which is evident from the below scatter matrix plot. After removing outliers, the distribution of parameters turns out to be normalized. Making the predictor more normalized gives us the better model.*
 *The insights that can be derived from the Scatter Matrix Plot are:*
 - *Most of the trips recorded had the passenger count to be in two’s and three’s, this shows that most of the passengers who opted for the yellow taxi tends to travel in two’s and three’s the most.*
 - *Most number of trips recorded had passengers travelling less than 30 miles, which makes sense as yellow taxis are commonly used for short trips within NYC.*
