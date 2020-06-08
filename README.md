@@ -4,18 +4,13 @@
 ---
 
 ## Introduction
-*The data is pulled from NYC Open Data.*
-*It consists of records for motor vehicle damage worth more than $1000 and casualties.*
-*The key factors used in this data visualization are contributing factors for the crash, Number of persons injured, Number of persons     killed, crash date, crash time and crash location.*
+*The fast-paced and connected world is run by many services and the subtle but vital one is taxi services. The yellow taxi is the heartbeat of economic capital (New York City) and being a part of its culture gives us enough reason to analyse them deeply. The Yellow Taxicab Co. was incorporated in New York on April 4, 1912. Yellow taxi in New York city had roughly around 14000 cabs permitted to operate in the city as per 2014. The taxi takes people from one location to other location within NYC and its demand is influenced by many factors like duration, trip distance, number of passengers, pickup locations, etc. The factors discussed above, and other uncertain factors has become a very important aspect to be discussed and visualized upon. Also, considering external atmospheric conditions as an important factor could lead us to a better predictive model. As a result, it becomes essential to analyse underlying factors and subtle parameters to enhance the existing system to have a better overview on the demand of taxis.*
 
 ---
 
 ## Sources
-- The source code came from [NYC Open Data](https://opendata.cityofnewyork.us/)
-- The code retrieves data from [API source](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95)
-- The link to create a account in [Socrata](https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95)
-- The code to create a heatmap using [Seaborn Package](https://dev.socrata.com/foundry/data.cityofnewyork.us/h9gi-nx95)
-- The link to use [Gmap](https://cloud.google.com/maps-platform/)
+- [NYC Yellow Taxi Data](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+- The weather data from [DarkSky API](https://darksky.net/dev)
 ---
 
 ## Explanation of the Code
