@@ -54,4 +54,7 @@ from ipywidgets.embed import embed_minimal_html
 
 ![Image of Plot](Images/TempvsDemand.jpeg)
 
+### Model Results:
+
+![Image of Plot](Images/TempvsDemand.jpeg)
 ---
