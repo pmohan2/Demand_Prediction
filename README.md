@@ -36,48 +36,24 @@ Scatter Matrix Plot (Raw Data):
 
 ![Image of Plot](Images/scatter1.png)
 
-
 Scatter Matrix Plot (Final Data):
 
 ![Image of Plot](Images/scatter2.png)
 
 Monthly Fluctuation of Demand:
+*The line graph shows the monthly fluctuation of demands for the top 5 locations (location with most number of rides in the year 2019) and can be inferred that the demand for yellow taxi was at the peak during the month of March at Madison square. Minimum demand was observed during the month of January and December. This might be due to the impact of winter vacation. Also, the similar downward trend was observed during the summer vacation.*
 
 ![Image of Plot](Images/Top5.jpeg)
 
-#### Heatmap (Weekly vs Hourly)
-```
-heatmap_df2["Weekday"] = pd.Categorical(heatmap_df2["Weekday"], heatmap_df2.Weekday.unique())
-plt.figure(figsize = (20, 10))
-file_long = heatmap_df2.pivot("Weekday", "Hour", "Crash_Count")
-sns.heatmap(file_long, cmap = 'viridis', annot=True, fmt=".0f")
-plt.title("Heatmap of Crash Count in New York City (Weekly vs Hourly)", fontsize = 14);
-plt.savefig('Heatmap2.jpg')
-```
+Heat Map (Weekly vs Hourly):
+*The following Heat Map compares weekly vs hourly taxi demand and it is evident that the demand was maximum during weekdays. Also, it can be inferred that demand was at its peak from evening to late in night. It is understood that people prefer to take yellow taxi during night time rather than the public transport.*
 
-The output from this code is shown below:
-![Image of Plot](images/Heatmap2.jpg)
+![Image of Plot](Images/Heatmap.jpeg)
 
-#### GMAPS Heatmap on NYC
+Temperature vs Demand:
+*From the Temperature vs Demand plot we can see that there is an increase in trend for demand of taxis when the temperature is very low as well as the temperature is very high. This might be because people may decide their mode of transportation depending upon the atmospheric condition.*
 
-```
-#------------------------Visualizing using Gmaps-------------------------------
-
-locations=pd.DataFrame(results_df[['latitude','longitude']])
-locations[['latitude','longitude']] = locations[['latitude','longitude']].astype(float) #Latitude and Longitude data are stored as float
-
-gmaps.configure(api_key='Key Here') #GMAPS API key is inserted
-nyc_coordinates = (40.7128, -74.0060)
-fig = gmaps.figure(center=nyc_coordinates, zoom_level=10.5) #Map co-ordinates along with zoom level is set
-heatmap_layer=gmaps.heatmap_layer(locations) #heatmap layer is created using latitude,longitude
-heatmap_layer.max_intensity = 200
-heatmap_layer.point_radius = 15
-fig.add_layer(heatmap_layer)
-embed_minimal_html('Heatmap_layer.html', views=[fig]) #heatmap file is exported in save directory
-```
-
-The output from this code is shown below:
-![Image of Plot](images/map.png)
+![Image of Plot](Images/TempvsDemand.jpeg)
 
 ---
 
