@@ -35,7 +35,12 @@ from ipywidgets.embed import embed_minimal_html
 
 Scatter Matrix Plot (Raw Data):
 
-![Image of Plot](Images/demand.jpeg)
+![Image of Plot](Images/scatter1.png)
+
+
+Scatter Matrix Plot (Final Data):
+
+![Image of Plot](Images/scatter12.png)
 
 #### Heatmap (Monthly vs Weekly)
 
